@@ -29,7 +29,7 @@ app.use('/downloaded', express.static('downloaded'));
 
 app.get('/callback', (req, res) => res.end(`I'm listening. Please access with POST.`));
 
-// webhook callback
+// webhook callback 
 app.post('/callback', line.middleware(config), (req, res) => {
   if (req.body.destination) {
     console.log("Destination User ID: " + req.body.destination);
@@ -47,7 +47,7 @@ app.post('/callback', line.middleware(config), (req, res) => {
       console.error(err);
       res.status(500).end();
     });
-});
+}); 
 
 // simple reply function
 const replyText = (token, texts) => {
@@ -164,7 +164,7 @@ function handleText(message, replyToken, source) {
           },
         }
       )
-    case 'carousel':
+    case 'イベント一覧':
       return client.replyMessage(
         replyToken,
         {
@@ -179,7 +179,7 @@ function handleText(message, replyToken, source) {
                 text: 'みんなで持ち寄ったボードゲームで民泊をします',
                 actions: [
                   { label: '詳細ページ', type: 'uri', uri: 'https://line.me' },
-                  { label: '参加する', type: 'postback', data: '参加' },
+                  { label: '参加するるうるｒ', type: 'postback', data: '参加' },
                 ],
               },
               {
