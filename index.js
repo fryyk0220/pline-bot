@@ -179,7 +179,7 @@ function handleText(message, replyToken, source) {
                 text: 'みんなで持ち寄ったボードゲームで民泊をします',
                 actions: [
                   { label: '詳細ページ', type: 'uri', uri: 'https://line.me' },
-                  { label: '参加するるうるｒ', type: 'postback', data: '参加' },
+                  { label: '参加する', type: 'postback', data: '参加' },
                 ],
               },
               {
