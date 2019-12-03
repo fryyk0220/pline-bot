@@ -113,13 +113,13 @@ function handleEvent(event) {
 
 function handleText(message, replyToken, source) {
   const buttonsImageURL = `${baseURL}/static/buttons/1040.jpg`;
-
+  console.log(message.text);
   switch (message.text) {
     case 'profile':
       if (source.userId) {
         return client.getProfile(source.userId)
           .then((profile) => replyText(
-            replyToken,
+            replyToken, 
             [
               `Display name: ${profile.displayName}`,
               `Status message: ${profile.statusMessage}`,
